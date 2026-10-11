@@ -30,3 +30,20 @@ print(failed_logins.to_string(index=False))
 #Count failed logins by IP address
 print("\nFailed Logins by IP Adress:")
 print(failed_logins["ip_address"].value_counts())
+
+#Flag IP Adresses with repeated failed logins
+login_counts = failed_logins["ip_address"].value_counts()
+
+print("\nSuspicious Activity Alerts:")
+
+suspicious_ips = login_counts[login_counts >= 5]
+
+if suspicious_ips.empty:
+    print("No suspicious login activity detected. ")
+
+else: 
+    for ip, count in suspicious_ips.items():
+
+        print(
+            f"ALERT: {ip} has {count} failed login attempts!"
+        )
