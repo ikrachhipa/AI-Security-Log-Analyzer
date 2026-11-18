@@ -1,0 +1,5 @@
+ip_address,total_events,failed_logins,successful_logins,unique_users,unique_endpoints,failed_login_ratio,suspicious,anomaly,threat_status
+192.168.1.10,1,0,1,1,1,0.0,False,1,Normal
+192.168.1.15,6,6,0,1,1,1.0,True,-1,Suspicious
+192.168.1.20,2,0,2,1,2,0.0,False,1,Normal
+192.168.1.25,1,0,1,1,1,0.0,False,1,Normal
